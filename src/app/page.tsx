@@ -11,7 +11,7 @@ import SocialProofTwo from '@/components/sections/socialProof/SocialProofTwo';
 import TeamCardTwo from '@/components/sections/team/TeamCardTwo';
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBase from '@/components/sections/footer/FooterBase';
-import { Anchor, Compass, Route, Users, Star, Map, MapPin, CloudRain, Package, MessageSquare, Award, Send } from "lucide-react";
+import { Anchor, Compass, Route, Users, Star, Map, MapPin, CloudRain, Package, MessageSquare, Award, Send, Mail, Linkedin, Globe, Twitter, Github, Instagram } from "lucide-react";
 
 const assetMap: { id: string; url: string; alt?: string }[] = [
   {"id":"hero-sailing","url":"https://images.pexels.com/photos/327337/pexels-photo-327337.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Aerial view of a luxury cruise ship with a small boat on a vast ocean at sunset."},
@@ -263,8 +263,8 @@ export default function Home() {
               imageSrc: resolveAsset("team-1").url,
               imageAlt: resolveAsset("team-1").alt,
               socialLinks: [
-                { icon: "Mail", url: "mailto:alex@sailingworld.com" },
-                { icon: "Linkedin", url: "https://linkedin.com/in/alexmorgan" }
+                { icon: Mail, url: "mailto:alex@sailingworld.com" },
+                { icon: Linkedin, url: "https://linkedin.com/in/alexmorgan" }
               ]
             },
             {
@@ -275,8 +275,8 @@ export default function Home() {
               imageSrc: resolveAsset("team-2").url,
               imageAlt: resolveAsset("team-2").alt,
               socialLinks: [
-                { icon: "Mail", url: "mailto:isabella@sailingworld.com" },
-                { icon: "Globe", url: "https://isabellacruz.com" }
+                { icon: Mail, url: "mailto:isabella@sailingworld.com" },
+                { icon: Globe, url: "https://isabellacruz.com" }
               ]
             },
             {
@@ -287,8 +287,8 @@ export default function Home() {
               imageSrc: resolveAsset("team-3").url,
               imageAlt: resolveAsset("team-3").alt,
               socialLinks: [
-                { icon: "Twitter", url: "https://twitter.com/davidkim" },
-                { icon: "Github", url: "https://github.com/davidkim" }
+                { icon: Twitter, url: "https://twitter.com/davidkim" },
+                { icon: Github, url: "https://github.com/davidkim" }
               ]
             },
             {
@@ -299,8 +299,8 @@ export default function Home() {
               imageSrc: resolveAsset("team-4").url,
               imageAlt: resolveAsset("team-4").alt,
               socialLinks: [
-                { icon: "Instagram", url: "https://instagram.com/sophielaurent" },
-                { icon: "Mail", url: "mailto:sophie@sailingworld.com" }
+                { icon: Instagram, url: "https://instagram.com/sophielaurent" },
+                { icon: Mail, url: "mailto:sophie@sailingworld.com" }
               ]
             }
           ]}
