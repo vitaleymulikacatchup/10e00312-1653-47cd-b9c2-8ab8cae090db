@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarStyleApple from '@/components/navbar/NavbarStyleApple/NavbarStyleApple';
@@ -11,7 +11,7 @@ import SocialProofTwo from '@/components/sections/socialProof/SocialProofTwo';
 import TeamCardTwo from '@/components/sections/team/TeamCardTwo';
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBase from '@/components/sections/footer/FooterBase';
-import { Anchor, Compass, Route, Users, Star, Map, MapPin, CloudRain, Package, MessageSquote, Award, Send } from "lucide-react";
+import { Anchor, Compass, Route, Users, Star, Map, MapPin, CloudRain, Package, MessageSquare, Award, Send } from "lucide-react";
 
 const assetMap: { id: string; url: string; alt?: string }[] = [
   {"id":"hero-sailing","url":"https://images.pexels.com/photos/327337/pexels-photo-327337.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Aerial view of a luxury cruise ship with a small boat on a vast ocean at sunset."},
