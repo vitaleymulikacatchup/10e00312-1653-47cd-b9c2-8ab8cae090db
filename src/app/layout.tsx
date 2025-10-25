@@ -140,71 +140,70 @@ export default function RootLayout({
 
   const style = document.createElement('style');
   style.id = 'webild-inspector-styles';
-  style.textContent = \`
-    .webild-hover {
-      outline: 2px dashed rgba(59, 130, 246, 0.7) !important;
-      outline-offset: 2px !important;
-      cursor: pointer !important;
-      transition: outline 0.15s ease !important;
-    }
-    .webild-selected {
-      outline: 2px solid rgba(59, 130, 246, 1) !important;
-      outline-offset: 2px !important;
-      transition: outline 0.15s ease !important;
-    }
-    [contenteditable="true"].webild-selected {
-      outline: 2px solid rgba(59, 130, 246, 1) !important;
-      background-color: rgba(59, 130, 246, 0.05) !important;
-    }
-    .webild-element-type-label {
-      position: fixed;
-      z-index: 999999;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      pointer-events: none;
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      letter-spacing: 0.3px;
-    }
-    .webild-selected-category-label {
-      position: fixed;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999998;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      pointer-events: none;
-      white-space: nowrap;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .webild-hover-overlay {
-      position: fixed !important;
-      background-color: rgba(59, 130, 246, 0.15) !important;
-      border-radius: 4px !important;
-      pointer-events: none !important;
-      z-index: 999998 !important;
-      transition: all 0.15s ease !important;
-    }
-  \`;
+  style.textContent = '' +
+    '.webild-hover {' +
+    '  outline: 2px dashed rgba(59, 130, 246, 0.7) !important;' +
+    '  outline-offset: 2px !important;' +
+    '  cursor: pointer !important;' +
+    '  transition: outline 0.15s ease !important;' +
+    '}' +
+    '.webild-selected {' +
+    '  outline: 2px solid rgba(59, 130, 246, 1) !important;' +
+    '  outline-offset: 2px !important;' +
+    '  transition: outline 0.15s ease !important;' +
+    '}' +
+    '[contenteditable="true"].webild-selected {' +
+    '  outline: 2px solid rgba(59, 130, 246, 1) !important;' +
+    '  background-color: rgba(59, 130, 246, 0.05) !important;' +
+    '}' +
+    '.webild-element-type-label {' +
+    '  position: fixed;' +
+    '  z-index: 999999;' +
+    '  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));' +
+    '  color: white;' +
+    '  padding: 6px 12px;' +
+    '  border-radius: 6px;' +
+    '  font-size: 12px;' +
+    '  font-weight: 600;' +
+    '  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;' +
+    '  pointer-events: none;' +
+    '  white-space: nowrap;' +
+    '  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);' +
+    '  letter-spacing: 0.3px;' +
+    '}' +
+    '.webild-selected-category-label {' +
+    '  position: fixed;' +
+    '  top: 16px;' +
+    '  left: 50%;' +
+    '  transform: translateX(-50%);' +
+    '  z-index: 999998;' +
+    '  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));' +
+    '  color: white;' +
+    '  padding: 10px 20px;' +
+    '  border-radius: 8px;' +
+    '  font-size: 14px;' +
+    '  font-weight: 700;' +
+    '  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;' +
+    '  pointer-events: none;' +
+    '  white-space: nowrap;' +
+    '  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);' +
+    '  letter-spacing: 0.5px;' +
+    '  text-transform: uppercase;' +
+    '}' +
+    '.webild-hover-overlay {' +
+    '  position: fixed !important;' +
+    '  background-color: rgba(59, 130, 246, 0.15) !important;' +
+    '  border-radius: 4px !important;' +
+    '  pointer-events: none !important;' +
+    '  z-index: 999998 !important;' +
+    '  transition: all 0.15s ease !important;' +
+    '}';
   document.head.appendChild(style);
   
   const getUniqueSelector = (element) => {
     const uniqueId = 'webild-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
     element.setAttribute('data-webild-id', uniqueId);
-    return \`[data-webild-id="\${uniqueId}"]\`;
+    return '[data-webild-id="' + uniqueId + '"]';
   };
   
   const getSectionId = (element) => {
@@ -274,7 +273,25 @@ export default function RootLayout({
 
     return 'Section';
   };
-  
+
+  const extractOriginalUrl = (url) => {
+    if (!url) return url;
+
+    if (url.includes('/_next/')) {
+      try {
+        const urlObj = new URL(url);
+        const originalPath = urlObj.searchParams.get('url');
+        if (originalPath) {
+          return originalPath;
+        }
+      } catch (e) {
+        return url;
+      }
+    }
+
+    return url;
+  };
+
   const getElementInfo = (element) => {
     const rect = element.getBoundingClientRect();
     const tagName = element.tagName.toLowerCase();
@@ -308,8 +325,9 @@ export default function RootLayout({
     };
     
     if (tagName === 'img') {
+      const originalSrc = extractOriginalUrl(element.src);
       info.imageData = {
-        src: element.src,
+        src: originalSrc,
         alt: element.alt || undefined,
         naturalWidth: element.naturalWidth,
         naturalHeight: element.naturalHeight,
@@ -322,14 +340,15 @@ export default function RootLayout({
     if (backgroundImage && backgroundImage !== 'none') {
       const urlMatch = backgroundImage.match(/url\(['"]?([^'")]+)['"]?\)/);
       if (urlMatch) {
+        const originalBgSrc = extractOriginalUrl(urlMatch[1]);
         if (tagName !== 'img') {
           info.imageData = {
-            src: urlMatch[1],
+            src: originalBgSrc,
             isBackground: true
           };
         } else {
           if (!info.imageData) info.imageData = {};
-          info.imageData.backgroundImageSrc = urlMatch[1];
+          info.imageData.backgroundImageSrc = originalBgSrc;
         }
       }
     }
@@ -535,12 +554,13 @@ export default function RootLayout({
   
   const showSelectedCategoryLabel = (elementType) => {
     removeSelectedCategoryLabel();
-    if (!elementType) return;
-    
-    selectedCategoryLabel = document.createElement('div');
-    selectedCategoryLabel.className = 'webild-selected-category-label';
-    selectedCategoryLabel.textContent = \`Editing: \${elementType}\`;
-    document.body.appendChild(selectedCategoryLabel);
+    // Removed the "Editing: {element}" label as per user request
+    // if (!elementType) return;
+    //
+    // selectedCategoryLabel = document.createElement('div');
+    // selectedCategoryLabel.className = 'webild-selected-category-label';
+    // selectedCategoryLabel.textContent = \`Editing: \${elementType}\`;
+    // document.body.appendChild(selectedCategoryLabel);
   };
   
   const removeSelectedCategoryLabel = () => {
@@ -739,7 +759,9 @@ export default function RootLayout({
       const storageKey = getStorageKey();
       const existingChanges = JSON.parse(localStorage.getItem(storageKey) || '[]');
 
-      const filteredChanges = existingChanges.filter(c => c.selector !== change.selector);
+      const filteredChanges = existingChanges.filter(c => {
+        return !(c.oldValue === change.oldValue && c.sectionId === change.sectionId);
+      });
       filteredChanges.push(change);
 
       localStorage.setItem(storageKey, JSON.stringify(filteredChanges));
@@ -804,8 +826,6 @@ export default function RootLayout({
       return;
     }
 
-    if (!isActive) return;
-    
     if (e.data.type === 'webild-update-text') {
       const { selector, newValue } = e.data.data;
       try {
@@ -840,6 +860,8 @@ export default function RootLayout({
       }
       return;
     }
+
+    if (!isActive) return;
 
     if (e.data.type === 'webild-replace-image') {
       const { selector, newSrc, isBackground } = e.data.data;
@@ -895,6 +917,8 @@ export default function RootLayout({
               cleanOldValue = urlMatch[1];
             }
           }
+
+          cleanOldValue = extractOriginalUrl(cleanOldValue);
 
           const change = {
             type: 'replaceImage',
